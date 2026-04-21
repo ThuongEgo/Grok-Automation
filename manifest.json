@@ -1,0 +1,62 @@
+{
+  "author": {
+    "email": "kylenguyenaws@gmail.com"
+  },
+  "name": "Auto Grok by thuongdq",
+  "description": "Công cụ xử lý hàng loạt, tối ưu thời gian tại grok.com",
+  "version": "2.2.9.0",
+  "version_name": "2.2.9",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Auto Grok by thuongdq"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/index.ts-BzCg1bV_.js"
+      ],
+      "all_frames": false,
+      "matches": [
+        "*://grok.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/ui/side-panel/index.html"
+  },
+  "offline_enabled": true,
+  "host_permissions": [
+    "*://grok.com/*",
+    "*://*.grok.com/*"
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "background",
+    "sidePanel",
+    "activeTab",
+    "downloads"
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://grok.com/*"
+      ],
+      "resources": [
+        "assets/index.ts-BzCg1bV_.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "icons": {
+    "16": "src/assets/logo.png",
+    "24": "src/assets/logo.png",
+    "32": "src/assets/logo.png",
+    "128": "src/assets/logo.png"
+  }
+}
